@@ -1,0 +1,11 @@
+{
+    "/api/*": {
+        "target": "http://api.agrosmart.tech",
+        "secure": false,
+        "logLevel": "debug",
+        "changeOrigin": "true",
+        "pathRewrite": {
+            "^/api": ""
+        }
+    }
+}

@@ -1,0 +1,48 @@
+<div class="top">
+    <h2>One Time Setup</h2>
+    <p>Please fill in the details to complete the initial setup.</p>
+</div>
+<br>
+<div class="card-content">
+    <div class="container">
+        <form class="setup-form" (submit)="setupApp($event)">
+            <mat-form-field class="form-full-width">
+                <input matInput placeholder="Property Name" type="text" id="name" required>
+            </mat-form-field>
+            <mat-form-field class="form-full-width">
+                <input matInput placeholder="Property Unique Code (land holding no/account no)" type="text"
+                    id="uniqueCode" required>
+            </mat-form-field>
+            <mat-form-field class="form-full-width">
+                <input matInput placeholder="Enter Nearest Location (City/Town/Landmark)" type="text" id="location"
+                    required>
+            </mat-form-field>
+            <mat-form-field class="form-full-width">
+                <input matInput placeholder="Location Latitude" type="text" id="latitude">
+            </mat-form-field>
+            <mat-form-field class="form-full-width">
+                <input matInput placeholder="Location Longitude" type="text" id="longitude">
+            </mat-form-field>
+            <mat-form-field class="form-full-width">
+                <input matInput placeholder="Land Elevation (in m)" type="text" id="elevation">
+            </mat-form-field>
+            <mat-form-field class="form-full-width">
+                <input matInput placeholder="Land Area (in acres)" type="number" id="area" required>
+            </mat-form-field>
+            <mat-form-field class="form-full-width">
+                <input matInput placeholder="Property Holder Email" type="text" id="username"
+                    required>
+            </mat-form-field>
+
+            <div class="container-row">
+                <div>
+                    <button type="submit" mat-raised-button color="accent" id="submit">Confirm Details</button>
+                </div>
+                &nbsp;  &nbsp;
+                <div>
+                    <button type="reset" mat-raised-button color="primary" id="reset">Start Over</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

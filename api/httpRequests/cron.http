@@ -1,0 +1,11 @@
+POST http://localhost:7988/cron/create
+Content-Type: application/json
+
+{
+    "propertyID": "6-YaNQcL",
+    "controllerID": "223445",
+    "cronType": "Daily",
+    "key": "5",
+    "value": "90",
+    "cronTime": "2020-02-28T20:17:46.384Z"
+}

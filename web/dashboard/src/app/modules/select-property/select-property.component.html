@@ -1,0 +1,34 @@
+<div class="top">
+    <h2>Property Setup</h2>
+    <p>Please select your property or create a new property.</p>
+</div>
+<br>
+<div class="card-content">
+    <div class="container">
+        <form class="setup-form" (submit)="setupApp($event)">
+            
+            <mat-form-field class="form-full-width">
+                <mat-label>Select Default Property</mat-label>
+                <mat-select name="propertyId" [(ngModel)]="selectedValue" (selectionChange)="changeP($event.value)">
+                    <mat-option *ngFor="let property of properties" [value]="property.propertyId">
+                        {{ property.propertyName }} - {{ property.uniqueCode }} | {{ property.location }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field class="form-full-width">
+                <input matInput placeholder="Controller ID (Check the Back of Controller)" type="text" id="controllerId" required>
+            </mat-form-field>
+            <mat-form-field class="form-full-width">
+                <input matInput placeholder="Confirm Nearby Location (City/Town/Landmark)" type="text" id="location" required>
+            </mat-form-field>
+            <div class="container-row">
+                <div>
+                    <button type="submit" mat-raised-button color="accent" id="submit">Confirm Property</button>
+                </div>
+            </div>
+        </form>
+        <div>
+            <button (click)="routeClick();" mat-raised-button color="primary">Add New Property</button>
+        </div>
+    </div>
+</div>

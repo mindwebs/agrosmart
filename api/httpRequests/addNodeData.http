@@ -1,0 +1,13 @@
+  
+POST http://localhost:7988/node_data/send
+Content-Type: application/json
+
+{
+    "deviceID": "fsoenaof_ffeugqvadshfaiw289AGFibhF",
+    "deviceType": "ESP 32 SmartPods",
+    "propertyID": "6-YaNQcL",
+    "temperature": "36.25",
+    "humidity": "76",
+    "waterLevel": "1",
+    "moisture": "20"
+}

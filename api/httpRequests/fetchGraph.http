@@ -1,0 +1,6 @@
+POST http://localhost:7988/graphs/data
+Content-Type: application/json
+
+{
+    "propertyID": "6-YaNQcL"
+}

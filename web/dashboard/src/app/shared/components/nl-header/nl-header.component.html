@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <span> AgroSmart | Welcome</span>
+
+        <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+            <ul fxLayout="row" fxLayoutGap="10px">
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>language</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>
+                            <mat-icon>notes</mat-icon>
+                            English
+                        </button>
+                        <button mat-menu-item>
+                            <mat-icon>notes</mat-icon>
+                            Hindi
+                        </button>
+                        <button mat-menu-item>
+                            <mat-icon>notes</mat-icon>
+                            Bengali
+                        </button>
+                    </mat-menu>
+
+                </li>
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>help_outline</mat-icon>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

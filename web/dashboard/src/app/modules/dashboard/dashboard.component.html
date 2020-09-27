@@ -1,0 +1,89 @@
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="weather-card">
+    <mat-card fxFlex="50">
+        <h3>Today's Weather</h3>
+        <p>
+            Temperature : {{ (this.weatherData?.main?.temp-273).toPrecision(4) }}°C | Humidity :
+            {{ this.weatherData?.main?.humidity || 'NA' }}% | Precipitation :
+            {{ this.weatherData?.rain || '10' }}%
+            <br></p>
+
+        <span class="weather-span">Location: {{ searchLocation }}</span>
+        <span class="weather-span fr-0">Results Provider : <a href="https://openweathermap.org/"
+                target="_blank">OpenWeather API</a></span>
+    </mat-card>
+    <mat-card fxFlex="50">
+        <h3>Today's Air Quality</h3>
+        <p>
+            Air Quality Information (AQI) : {{ this.airData?.data?.aqi || 'N/A' }} | PM2.5 :
+            {{ this.airData?.data?.iaqi?.pm25?.v || 'N/A'}} | SPM : {{ this.airData?.data?.iaqi?.p?.v || 'N/A'}}
+            <br></p>
+        <span class="weather-span">Location: {{ searchLocation }} | Index : micro-grams/cubic meter</span>
+        <span class="weather-span fr-0">Results Provider : <a href="https://aqicn.org/" target="_blank">Aqicn</a></span>
+    </mat-card>
+</div>
+<br>
+<mat-divider></mat-divider>
+<br>
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="weather-card">
+    <mat-card fxFlex="100">
+        <h3>3 Day Forecast</h3>
+        <p>
+            Temperature : (29°C/17°C) , (30°C/18°C) , (31°C/19°C) | Humidity : 53% , 54% , 58% | Precip : 10% , 10% , 10% <br> <br>
+            <span style="color:darkorange">Its safe to turn on water pumps with less rainfall.</span>
+            <br></p>
+
+        <span class="weather-span">Location: {{ searchLocation }}</span>
+        <span class="weather-span fr-0">Results Provider : <a href="https://openweathermap.org/"
+                target="_blank">OpenWeather API</a></span>
+    </mat-card>
+</div>
+<br>
+<mat-divider></mat-divider>
+<br>
+<div>
+    <div class="row" style="padding-left:20px">
+        <p>Primary Node Plot</p>
+    </div>
+    <div class="row">
+        <app-data-charts [data]="bigChart" [xdata]="xdata" [title]="title" [subtitle]="subtitle"></app-data-charts>
+    </div>
+</div>
+<br>
+<mat-divider></mat-divider>
+<br>
+<div class="row">
+    <mat-card>
+        <h3 style="text-align: center;">Manage Controllers</h3>
+        <!-- <mat-label>Select controller from dropdown</mat-label> -->
+        <mat-select name="controllerID" placeholder="Select Controller from Dropdown" (selectionChange)="controllerChange($event.value)">
+            <mat-option *ngFor="let controller of controllers" [value]="controller.controllerID">
+                {{ controller.controllerID }} - {{ controller.controllerType }}
+            </mat-option>
+        </mat-select>
+        <p>Currently Selected Controller ID is - <strong>{{ defaultController }}</strong>. To change go to settings.</p>
+        <p>The relay and pump controls are listed below.</p>
+    </mat-card>
+</div>
+<br />
+<br />
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="control-card">
+    <mat-card fxFlex="25">
+        <app-cards label="Motor Pump" switchText="Turn {{ !relays[0]?'On':'Off' }}" toggleState="{{ relays[0] }}" controllerID="{{ defaultController }}" keyID="1"></app-cards>
+    </mat-card>
+    <mat-card fxFlex="25">
+        <app-cards label="Motor Pump" switchText="Turn {{ !relays[1]?'On':'Off' }}" toggleState="{{ relays[1] }}" controllerID="{{ defaultController }}" keyID="2"></app-cards>
+    </mat-card>
+    <mat-card fxFlex="25">
+        <app-cards label="Switch" switchText="Turn {{ !relays[2]?'On':'Off' }}" toggleState="{{ relays[2] }}" controllerID="{{ defaultController }}" keyID="3"></app-cards>
+    </mat-card>
+    <mat-card fxFlex="25">
+        <app-cards label="Switch" switchText="Turn {{ !relays[3]?'On':'Off' }}" toggleState="{{ relays[3] }}" controllerID="{{ defaultController }}" keyID="4"></app-cards>
+    </mat-card>
+</div>
+<br>
+<mat-divider></mat-divider>
+<br>
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-card">
+    <div class="table-1"></div>
+    <div class="chart-2"></div>
+</div>

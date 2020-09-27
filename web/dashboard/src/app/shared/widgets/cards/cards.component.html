@@ -1,0 +1,7 @@
+<div class="card-header">
+    <h4>{{ label }} {{ keyID }}</h4>
+</div>
+<br>
+<div class="card-body">
+    <mat-slide-toggle [checked]="toggleState" (change)="changeState($event, controllerID, keyID)">{{ switchText }}</mat-slide-toggle>
+</div>

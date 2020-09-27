@@ -1,0 +1,38 @@
+<div>
+    <h2>Average Environment data for each Day</h2>
+    <div *ngFor="let chart of seriesChart; index as i">
+        <div>
+            <div class="row" style="padding-left:20px">
+                <p>Day average data for Node {{i+1}}</p>
+            </div>
+            <div class="row">
+                <app-data-charts [data]="chart" [xdata]="xdata[i]"></app-data-charts>
+            </div>
+        </div>
+        <br>
+        <mat-divider></mat-divider>
+
+        <br>
+    </div>
+
+    <br><br>
+    <mat-divider></mat-divider>
+    <br><br>
+
+    <h2>Today's environment Statistics</h2>
+    <div *ngFor="let chart of dateSeriesChart; index as i">
+        <div>
+            <div class="row" style="padding-left:20px">
+                <p> Today's data for Node {{i+1}}</p>
+            </div>
+            <div class="row">
+                <app-data-charts [data]="chart" [xdata]="timeXdata[i]"></app-data-charts>
+            </div>
+        </div>
+        <br>
+        <mat-divider></mat-divider>
+
+        <br>
+    </div>
+</div>
+    

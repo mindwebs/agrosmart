@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb://agUser:yourPassword@localhost:27017/dbAgro",
+    "baseUrl": "http://localhost:5000"
+}

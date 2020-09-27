@@ -1,0 +1,8 @@
+POST http://localhost:7988/controller/change
+Content-Type: application/json
+
+{
+    "controllerID": "14710516",
+    "key": 1,
+    "value": 0
+}

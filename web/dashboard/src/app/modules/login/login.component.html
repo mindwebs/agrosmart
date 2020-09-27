@@ -1,0 +1,38 @@
+<div class="top">
+    <h2>A Smarter Way to Farm</h2>
+</div>
+
+<div class="card-content">
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="login-card">
+        <mat-card fxFlex="60">
+            <h3>Login</h3>
+            <p>Please fill in correct details to enter the dashboard.</p>
+            <div class="login-container">
+                <form (submit)="loginUser($event)">
+                    <div class="container">
+                        <div>
+                            <input type="text" placeholder="Enter Email/Username" id="username">
+                        </div>
+                        <div>
+                            <input type="password" placeholder="Enter Password" id="password">
+                        </div>
+                        <div class="container-row">
+                            <div>
+                                <button type="submit" mat-raised-button color="primary" id="submit">Submit</button>
+                            </div>
+                            &nbsp;
+                            <div>
+                                <button type="reset" mat-raised-button color="warn" id="reset">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <br>
+            <p>Forgot Password? <a routerLink='/resetPassword' id="forgotPassword">Reset Password</a></p>
+        </mat-card>
+        <mat-card fxFlex="40">
+            <img src="../../../assets/smartAgriculture.jpg" height="360px">
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+ACCESS DETAILS -
+
+COMMANDS TO CREATE A NEW DATABASE & USER after logging in as Admin User
+
+> use dbAgro
+
+> db.createUser(
+  {
+    user: "username",
+    pwd: "password",
+    roles: [ { role: "readWrite", db: "dbAgro" } ]
+  }
+)

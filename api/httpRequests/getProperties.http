@@ -1,0 +1,6 @@
+POST http://localhost:7988/property/getProperties
+Content-Type: application/json
+
+{
+    "adminName": "dipanroy12@gmail.com"
+}

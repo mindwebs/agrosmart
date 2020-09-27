@@ -1,0 +1,84 @@
+<div class="row t-center">
+    <h1>Automate & Control</h1>
+</div>
+<br>
+<mat-divider></mat-divider>
+
+<div class="row">
+    <h3>Set Timers -  Automated CRON Jobs</h3>
+</div>
+<div fxLayout="row" fxLayoutAlign="space-between top" fxLayoutGap="20px" class="control-card">
+    <mat-card fxFlex="50">
+        <p>Please Select the Controller and Then Set the Timers</p>
+        <form class="cron-form" (submit)="setupCron($event)">
+            <mat-form-field>
+                <mat-select name="controllerID" placeholder="Select Controller">
+                    <mat-option *ngFor="let controller of controllers" [value]="controller.controllerID">
+                        {{ controller.controllerID }} - {{ controller.controllerType }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+            &nbsp; &nbsp;
+            <mat-form-field>
+                <mat-select name="keyID" placeholder="Select Relay or Servo">
+                    <mat-option value="1">Relay/Switch 1</mat-option>
+                    <mat-option value="2">Relay/Switch 2</mat-option>
+                    <mat-option value="3">Relay/Switch 3</mat-option>
+                    <mat-option value="4">Relay/Switch 4</mat-option>
+                    <mat-option value="5">Servo 1</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br />
+            <p>Set Values - First Dropdown for Relays or Value Entry for Servo</p>
+            <mat-form-field>
+                <mat-select name="value" placeholder="Select Relay State">
+                    <mat-option value="1">Turn On</mat-option>
+                    <mat-option value="0">Turn Off</mat-option>
+                </mat-select>
+            </mat-form-field>
+            &nbsp; &nbsp;
+            <mat-form-field>
+                <input matInput placeholder="Enter Degree Value (for Servo Only)" min=0 max=180 type="number"
+                    id="servoVal">
+            </mat-form-field>
+            <br />
+            <p>Select Date Time to Run the Automated Task</p>
+            <mat-form-field>
+                <mat-label>Choose a Date</mat-label>
+                <input matInput [matDatepicker]="picker" id="date">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            &nbsp; &nbsp;
+            <mat-form-field>
+                <input matInput type="time" placeholder="Choose a Time" id="time">
+            </mat-form-field>
+            <br>
+            <mat-form-field class="form-full-width">
+                <mat-select name="frequency" placeholder="Select Frequency of Scheduling">
+                    <mat-option value="Once">Once</mat-option>
+                    <mat-option value="Hourly">Hourly</mat-option>
+                    <mat-option value="Daily">Daily</mat-option>
+                    <mat-option value="Weekly">Weekly</mat-option>
+                    <mat-option value="Monthly">Monthly</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <br>
+            <div class="container-row">
+                <div>
+                    <button type="submit" mat-raised-button color="primary" id="submit">Confirm Scheduling</button>
+                </div>
+            </div>
+
+        </form>
+
+        <br />
+
+    </mat-card>
+    <mat-card fxFlex="50">
+        <div class="row t-center"><h4>Scheduled Jobs</h4></div>
+    </mat-card>
+</div>
+<br>
+<mat-divider></mat-divider>
+<br>
