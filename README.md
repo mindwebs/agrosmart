@@ -1,3 +1,10 @@
+<p align="center">
+<img src="https://img.shields.io/badge/Hacktoberfest-Friendly-blueviolet?style=for-the-badge">
+<img src="https://img.shields.io/github/issues-pr/mindwebs/AgroSmart?label=Pull%20Requests&style=for-the-badge">
+<img src="https://img.shields.io/github/issues/mindwebs/AgroSmart?color=db0000&label=Issues&style=for-the-badge">
+<img src="https://img.shields.io/github/contributors/mindwebs/AgroSmart?color=blue&style=for-the-badge">
+</p>
+
 # AgroSmart - A Smart Farming Solution
 IoT Based Field Monitorin and Control Platfornm Using MEAN Stack.
 
