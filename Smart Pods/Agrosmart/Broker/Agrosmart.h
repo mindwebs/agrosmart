@@ -18,7 +18,7 @@ class AgroSmart{
   // Returns: data, URL(optional) => response
   String post_data(String, String);
   String get_data(String);
- 
+  String patch_data(String);
 };
 
 #endif
