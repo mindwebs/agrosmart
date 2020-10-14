@@ -27,10 +27,12 @@ String AgroSmart::get_data(String url){
   String httpResponse;
   int httpCode = http.GET();
   if(httpCode<1){
+    Serial.println("Server Responded with an Error Code, please retry the Request");
     httpResponse = "Server Error: GET request Failed";
   }
   else{
     httpResponse = http.getString();
+    Serial.println("Server Responded with status 200");
   }
   http.end();
   return httpResponse;

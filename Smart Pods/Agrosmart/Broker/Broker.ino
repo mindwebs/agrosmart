@@ -88,6 +88,14 @@ void sendSensorData(){
     setMultiplexer(1,0);
     data["solarIntensity"]=String((analogRead(ANALOG_SENSOR)*100)/1024.0);
 
+    // Reading the Sensor at (S1,S0)=(1,0)
+    setMultiplexer(1,0);
+    data["windSpeed"]=String((analogRead(ANALOG_SENSOR)*100)/1024.0);
+
+    // Reading the Sensor at (S1,S0)=(1,0)
+    setMultiplexer(1,1);
+    data["tankWaterLevel"]=String((analogRead(ANALOG_SENSOR)*100)/1024.0);
+
     //Stringifying JSON Doc
     serializeJsonPretty(doc, JSONmessageBuffer);  
     Serial.println("........Printing data.........");
