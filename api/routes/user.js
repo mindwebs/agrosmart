@@ -8,13 +8,16 @@ const shortid = require('shortid');
 const User = require('../models/User');
 
 router.post('/create', async (req, res) => {
-    const { name } = req.body;
-    const { email } = req.body;
-    const { phone } = req.body;
-    //const { pass } = req.body;
-    const pass = req.body.password;
-    const { accessLevel } = req.body; // W/A/U-S
-    const { defaultProperty } = req.body;
+    // const { name } = req.body;
+    // const { email } = req.body;
+    // const { phone } = req.body;
+    // //const { pass } = req.body;
+    // const pass = req.body.password;
+    // const { accessLevel } = req.body; // W/A/U-S
+    // const { defaultProperty } = req.body;
+
+    const { name, email, phone, password : pass,accessLevel, defaultProperty  } = req.body;
+
     const defaultTimeout = 0;
 
     let password = bcrypt.hashSync(pass, saltRounds);
