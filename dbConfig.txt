@@ -1,6 +1,6 @@
 ACCESS DETAILS -
 
-COMMANDS TO CREATE A NEW DATABASE & USER after logging in as Admin User
+COMMANDS TO CREATE A NEW DATABASE & USER after logging into mongo shell
 
 > use dbAgro
 
