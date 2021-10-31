@@ -124,8 +124,8 @@ void setup() {
   //On connection Failure
   if(!wifiManager.autoConnect("Agrosmart-Node", "generic_password")){
     Serial.println("Failed Connection to remote Access Point");
+    delay(2000);
     ESP.reset();
-    delay(5000);
   }
   
   Serial.print(WiFi.localIP());
@@ -147,10 +147,15 @@ void loop(){
     TaskManager.execute();
   }
   else{
-    Serial.println("WiFi disconnected: Entering Deep Sleep");
+    Serial.println("WiFi disconnected: waiting for connection");
+    int count = 5;
+    while(WiFi.status()!=WL_CONNECTED && counter--){
+      delay(1000);
+      print(".");
+    }
+    if(WiFi.status()==WL_CONNECTED) continue;
+    println("Reseting ESP");
     ESP.reset();
-  //    ESP.deepSleep(20e6); // To be added in 20e6 uS in Prod for Deep sleep removing delay
-
   }
 //  
 }
