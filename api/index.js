@@ -7,8 +7,7 @@ let shell = require('shelljs');
 const app = express();
 app.use(cors()); //For Cross Origin
 
-//Connect to Database
-connectDB();
+
 
 app.use(express.json({ extend: false }));
 
@@ -34,4 +33,5 @@ app.use('/graphs', require('./routes/graphs'));
 
 const PORT = 7988;
 
-app.listen(PORT, () => console.log(`AgroSmart Server Running and Listening at Port ${PORT}`));
+//Connect to Database and then server
+connectDB(() => app.listen(PORT, () => console.log(`AgroSmart Server Running and Listening at Port ${PORT}`)));
